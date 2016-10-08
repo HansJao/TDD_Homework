@@ -1,17 +1,17 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using TDD_Day1Homework;
+using Day1HomeWork;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ExpectedObjects;
 using NSubstitute;
+using ExpectedObjects;
 
-namespace TDD_Day1Homework.Tests
+namespace Day1HomeWork.Tests
 {
     [TestClass()]
-    public class CalculatorSumTests
+    public class CalculatorTests
     {
         [TestMethod()]
         public void TestCostSum()
