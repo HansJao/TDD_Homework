@@ -23,8 +23,8 @@ namespace TDD_Day1Homework.Tests
             var expected = new int[] { 6, 15, 24, 21 };
 
             //calculator.CountSum(ProductData,3,"Cost").Returns(expected);
-            CalculatorService calcultorService = new CalculatorService(calculator);
-
+            // CalculatorService calcultorService = new CalculatorService(calculator);
+            //act
             var actual = calculator.CountSum(ProductData, 3, "Cost");
             //assert
             expected.ToExpectedObject().ShouldEqual(actual);
@@ -33,15 +33,18 @@ namespace TDD_Day1Homework.Tests
         [TestMethod()]
         public void CountRevenusSum()
         {
+            //arrange
             var ProductData = GetProductData();
 
-            ICountSum calculator = Substitute.For<ICountSum>();//new CalculatorSum();
+            ICountSum calculator = new CalculatorSum();
             var expected = new int[] { 50, 66, 60 };
 
-            calculator.CountSum(ProductData, 4, "Revenue").Returns(new int[] { 50, 66, 60 });
-            CalculatorService calcultorService = new CalculatorService(calculator);
-            //
-            expected.ToExpectedObject().ShouldEqual(calculator.CountSum(ProductData, 4, "Revenue"));
+            //calculator.CountSum(ProductData, 4, "Revenue").Returns(new int[] { 50, 66, 60 });
+            //CalculatorService calcultorService = new CalculatorService(calculator);
+            //act
+            var actual = calculator.CountSum(ProductData, 4, "Revenue");
+            //assert
+            expected.ToExpectedObject().ShouldEqual(actual);
         }
 
         public List<Product> GetProductData()
