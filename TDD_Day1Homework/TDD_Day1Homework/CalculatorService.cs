@@ -27,7 +27,7 @@ namespace TDD_Day1Homework
     {
         public int[] CountSum(List<Product> ProductData, int GroupNumber, string FiledName)
         {
-            //do something
+            
             return new int[] { 6, 15, 24, 21 };
         }
     }
