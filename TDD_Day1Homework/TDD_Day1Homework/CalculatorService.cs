@@ -4,29 +4,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Day1HomeWork
+namespace TDD_Day1Homework
 {
-    public class Program
-    {
-        static void Main(string[] args)
-        {
-
-        }
-    }
-
     public class CalculatorService
     {
+
         private ICountSum _sum;
 
-        public CalculatorService(ICountSum sum)
+        public CalculatorService(ICountSum sum1)
         {
-            this._sum = sum;
+            this._sum = sum1;
         }
 
         public int[] DoCountSum(List<Product> ProductData, int GroupNumber, string FiledName)
         {
             return _sum.CountSum(ProductData, GroupNumber, FiledName);
         }
+
     }
 
     public class CalculatorSum : ICountSum
