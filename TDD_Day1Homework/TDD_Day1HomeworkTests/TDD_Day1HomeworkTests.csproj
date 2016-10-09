@@ -37,10 +37,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ExpectedObjects">
-      <HintPath>..\..\..\..\..\..\..\Downloads\TDD\day1-lab-source\lab2-MsTestIntroduction\MsTestIntroduction\bin\Debug\ExpectedObjects.dll</HintPath>
+      <HintPath>\\Mac\Home\Downloads\TDD\day1-lab-source\lab2-MsTestIntroduction\MsTestIntroduction\bin\Debug\ExpectedObjects.dll</HintPath>
     </Reference>
     <Reference Include="NSubstitute">
-      <HintPath>..\..\..\..\..\..\..\Downloads\TDD\day1-lab-source\lab3-DirectDependency\RsaSecureTokenTests\bin\Debug\NSubstitute.dll</HintPath>
+      <HintPath>\\Mac\Home\Downloads\TDD\day1-lab-source\lab3-DirectDependency\RsaSecureTokenTests\bin\Debug\NSubstitute.dll</HintPath>
     </Reference>
     <Reference Include="System" />
   </ItemGroup>

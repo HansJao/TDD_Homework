@@ -27,12 +27,12 @@ namespace TDD_Day1Homework
 
     public class CalculatorSum : ICountSum
     {
-        public int[] CountSum(List<Product> ProductData, int GroupNumber, string FiledName)
+        public int[] CountSum<T>(IEnumerable<T> ProductData, int GroupNumber, string FiledName)
         {
             int SumResult = 0;
             int seed = 0;
             List<int> AllResult = new List<int>();
-            foreach (Product data in ProductData)
+            foreach (var data in ProductData)
             {
                 var Number = Convert.ToInt32(TryGetField(data, FiledName));
                 SumResult = Number + SumResult;
@@ -44,7 +44,7 @@ namespace TDD_Day1Homework
                 }
             }
 
-            if (ProductData.Count % GroupNumber != 0)
+            if (ProductData.Count() % GroupNumber != 0)
             {
                 AllResult.Add(SumResult);
             }
@@ -65,7 +65,7 @@ namespace TDD_Day1Homework
 
     public interface ICountSum
     {
-        int[] CountSum(List<Product> ProductData, int GroupNumber, string FiledName);
+        int[] CountSum<T>(IEnumerable<T> ProductData, int GroupNumber, string FiledName);
     }
 
     public class Product
@@ -76,4 +76,8 @@ namespace TDD_Day1Homework
         public int SellPrice { get; set; }
     }
 
+    public class Order
+    {
+        public int ID { get; set; }
+    }
 }
