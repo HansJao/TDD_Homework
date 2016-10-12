@@ -24,32 +24,32 @@ namespace TDD_Day1Homework
     //    }
 
     //}
-
-    public class CalculatorSum : ICountSum
+    public class CalculatorSum
     {
         public int[] CountSum<T>(IEnumerable<T> ProductData, int GroupNumber, string FiledName)
         {
-            int SumResult = 0;
+            int sumResult = 0;
             int seed = 0;
             List<int> AllResult = new List<int>();
             foreach (var data in ProductData)
             {
-                var Number = Convert.ToInt32(TryGetField(data, FiledName));
-                SumResult = Number + SumResult;
+                var number = Convert.ToInt32(TryGetField(data, FiledName));
+                sumResult = number + sumResult;
                 seed++;
                 if (seed % GroupNumber == 0)
                 {
-                    AllResult.Add(SumResult);
-                    SumResult = 0;
+                    AllResult.Add(sumResult);
+                    sumResult = 0;
                 }
             }
 
             if (ProductData.Count() % GroupNumber != 0)
             {
-                AllResult.Add(SumResult);
+                AllResult.Add(sumResult);
             }
             return AllResult.ToArray(); ;
         }
+
 
         static object TryGetField(object obj, string fieldName)
         {
@@ -61,11 +61,6 @@ namespace TDD_Day1Homework
             else
                 return pi.GetValue(obj, null);
         }
-    }
-
-    public interface ICountSum
-    {
-        int[] CountSum<T>(IEnumerable<T> ProductData, int GroupNumber, string FiledName);
     }
 
     public class Product

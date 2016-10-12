@@ -19,11 +19,9 @@ namespace TDD_Day1Homework.Tests
             //arrange
             var ProductData = GetProductData();
 
-            ICountSum calculator = new CalculatorSum();//Substitute.For<ICountSum>();
+            CalculatorSum calculator = new CalculatorSum();
             var expected = new int[] { 6, 15, 24, 21 };
 
-            //calculator.CountSum(ProductData,3,"Cost").Returns(expected);
-            // CalculatorService calcultorService = new CalculatorService(calculator);
             //act
             var actual = calculator.CountSum(ProductData, 3, "Cost");
             //assert
@@ -36,11 +34,8 @@ namespace TDD_Day1Homework.Tests
             //arrange
             var ProductData = GetProductData();
 
-            ICountSum calculator = new CalculatorSum();
+            CalculatorSum calculator = new CalculatorSum();
             var expected = new int[] { 50, 66, 60 };
-
-            //calculator.CountSum(ProductData, 4, "Revenue").Returns(new int[] { 50, 66, 60 });
-            //CalculatorService calcultorService = new CalculatorService(calculator);
             //act
             var actual = calculator.CountSum(ProductData, 4, "Revenue");
             //assert
@@ -49,7 +44,7 @@ namespace TDD_Day1Homework.Tests
 
         public List<Product> GetProductData()
         {
-            var ProductData = new List<Product>
+            var products = new List<Product>
             {
                 new Product {ID=1,Cost=1,Revenue=11,SellPrice=21 },
                 new Product {ID=2,Cost=2,Revenue=12,SellPrice=22 },
@@ -65,18 +60,7 @@ namespace TDD_Day1Homework.Tests
 
             };
 
-            return ProductData;
-        }
-
-        public List<Order> GetOrderData()
-        {
-            var OrderData = new List<Order>
-            {
-                new Order {ID=11 }
-
-
-            };
-            return OrderData;
+            return products;
         }
     }
 }
